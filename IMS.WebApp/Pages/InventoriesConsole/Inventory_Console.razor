@@ -1,0 +1,24 @@
+﻿@page "/inventory_console"
+<h3>صفحه مدیریت انباردار</h3>
+<br />
+<div class="row">
+    <div class="col-4">
+        <SelectedProductForCheckOut OnProductSelected="SelectProduct"></SelectedProductForCheckOut>
+        <CheckOutProductComponent SelectedProduct="selectedProduct" OnProductCheckOut="CheckOutProduct"></CheckOutProductComponent>
+    </div>
+    <div class="col-8"></div>
+
+</div>
+
+
+@code {
+    private Product selectedProduct;
+    private void SelectProduct(Product product)
+    {
+        selectedProduct = product;
+    }
+    private void CheckOutProduct(Product product)
+    {
+        
+    }
+}

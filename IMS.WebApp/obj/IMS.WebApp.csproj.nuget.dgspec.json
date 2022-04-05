@@ -1,0 +1,261 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\.NetCore Courses\\Project\\IMS\\IMS.WebApp\\IMS.WebApp.csproj": {}
+  },
+  "projects": {
+    "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj",
+        "projectName": "IMS.CoreBusiness",
+        "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj",
+        "packagesPath": "C:\\Users\\M.hajializadeh\\.nuget\\packages\\",
+        "outputPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.hajializadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\.NetCore Courses\\Project\\IMS\\IMS.Plugin.DataStore\\IMS.Plugin.DataStore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\.NetCore Courses\\Project\\IMS\\IMS.Plugin.DataStore\\IMS.Plugin.DataStore.csproj",
+        "projectName": "IMS.Plugin.DataStore",
+        "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.Plugin.DataStore\\IMS.Plugin.DataStore.csproj",
+        "packagesPath": "C:\\Users\\M.hajializadeh\\.nuget\\packages\\",
+        "outputPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.Plugin.DataStore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.hajializadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj": {
+                "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj",
+        "projectName": "IMS.UseCases",
+        "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj",
+        "packagesPath": "C:\\Users\\M.hajializadeh\\.nuget\\packages\\",
+        "outputPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.hajializadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj": {
+                "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\.NetCore Courses\\Project\\IMS\\IMS.WebApp\\IMS.WebApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\.NetCore Courses\\Project\\IMS\\IMS.WebApp\\IMS.WebApp.csproj",
+        "projectName": "IMS.WebApp",
+        "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.WebApp\\IMS.WebApp.csproj",
+        "packagesPath": "C:\\Users\\M.hajializadeh\\.nuget\\packages\\",
+        "outputPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.WebApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\M.hajializadeh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj": {
+                "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.CoreBusiness\\IMS.CoreBusiness.csproj"
+              },
+              "C:\\.NetCore Courses\\Project\\IMS\\IMS.Plugin.DataStore\\IMS.Plugin.DataStore.csproj": {
+                "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.Plugin.DataStore\\IMS.Plugin.DataStore.csproj"
+              },
+              "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj": {
+                "projectPath": "C:\\.NetCore Courses\\Project\\IMS\\IMS.UseCases\\IMS.UseCases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

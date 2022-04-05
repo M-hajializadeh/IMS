@@ -1,0 +1,33 @@
+﻿@page "/products/deleteproduct/{Id}"
+@inject IGetProductUseCase GetProductUseCase
+@inject IDeleteProductUseCase DeleteProductUseCase
+@inject NavigationManager NVM
+<h3>حذف محصول</h3>
+<div class="row alert alert-danger">
+    آیا تمایل به حذف محصول @product.Name رو دارید؟
+</div>
+<div class="row">
+    <button class="btn btn-danger" @onclick="DeleteProduct">حذف محصول</button>
+    <button class="btn btn-dark" @onclick="BackTo">انصراف</button>
+</div>
+@code {
+    [Parameter]
+    public string? Id{ get; set; }
+    private Product product;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (int.TryParse(Id, out int iProductId))
+            product = GetProductUseCase.Execute(iProductId);
+    }
+    private void DeleteProduct()
+    {
+        DeleteProductUseCase.Execute(product.Id);
+        BackTo();
+    }
+     private void BackTo()
+    {
+        NVM.NavigateTo("/product/viewproducts");
+    }
+}

@@ -1,0 +1,46 @@
+﻿@page "/category/addcategory"
+@inject NavigationManager NVM
+
+@inject IAddCategoryUseCase AddCategoryUseCase
+<h3>افزودن دسته بندی</h3>
+@if (category != null)
+{
+    <EditForm Model="category" OnValidSubmit="AddCategory">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <div class="row mb-2">
+            <div class="input-group col-6">
+                <label for="name">نام دسته بندی</label>
+                <InputText id="name" class="form-control" @bind-Value="category.Name"   ></InputText>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="input-group col">
+                <label for="description">توضیحات</label>
+                <InputText id="description" class="form-control" @bind-Value="category.Description"></InputText>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">اضافه کردن</button>
+        <button class="btn btn-alert-dark" @onclick="BackTo">انصراف</button>
+    </EditForm>
+}
+@code {
+    private Category category;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        category = new Category();
+    }
+    private void AddCategory()
+    {
+        if (category == null)
+            return;
+        AddCategoryUseCase.Execute(category);
+        BackTo();
+    }
+
+    private void BackTo()
+    {
+        NVM.NavigateTo("/category/viewcategory");
+    }
+}

@@ -1,0 +1,33 @@
+﻿@page "/category/deletecategory/{Id}"
+@inject NavigationManager NVM
+@inject IGetCategoryByIdUseCase  GetCategoryByIdUseCase 
+@inject IDeleteCategoryUseCase DeleteCategoryUseCase
+<h3>حذف دسته بندی</h3>
+<div class="row alert alert-danger">
+    آیا تمایل به حذف دسته بندی @Category.Name رو دارید؟
+</div>
+<div class="row">
+    <button class="btn btn-danger" @onclick="DeleteCategory">حذف دسته بندی</button>
+    <button class="btn btn-dark" @onclick="BackTo">انصراف</button>
+</div>
+@code {
+    [Parameter]
+    public string Id { get; set; }
+    private Category Category;
+ 
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (int.TryParse(Id, out int result))
+            Category = GetCategoryByIdUseCase.Execute(result);
+    }
+    private void DeleteCategory()
+    {
+        DeleteCategoryUseCase.Execute(Category.Id);
+        BackTo();
+    }
+     private void BackTo()
+    {
+        NVM.NavigateTo("/category/viewcategory");
+    }
+}

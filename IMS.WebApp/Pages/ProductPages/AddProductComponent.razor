@@ -1,0 +1,69 @@
+﻿@page "/product/addproduct"
+@inject NavigationManager NVM
+@inject IAddProductUseCase AddProductUseCase
+@inject IViewCategoryUseCase  ViewCategoryUseCase
+
+<h3>اضافه کردن محصول</h3>
+@if(product !=null)
+{
+    <EditForm Model="product" OnValidSubmit="AddProduct">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <div class="row mb-2">
+            <div class="input-group col-6">
+                <label for="name">نام محصول</label>
+                <InputText id="name" class="form-control" @bind-Value="product.Name"   ></InputText>
+            </div>
+            <div class="input-group col-6">
+                <label for="categoryid">نام دسته بندی</label>
+                <select class="form-select" id="categoryid" @bind="product.CategoryId">
+                    <option selected>انتخاب دسته بندی</option>
+                    @foreach (var cat in this.category)
+                    {
+                        <option value="@cat.Id">@cat.Name</option>
+                    }
+                </select>
+
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="input-group col-6">
+                <label for="quntity">تعداد</label>
+                <InputNumber id="quntity" class="form-control" @bind-Value="product.Quntity"   ></InputNumber>
+            </div>
+            <div class="input-group col-6">
+                <label for="picture">تصویر محصول</label>
+                <InputFile id="picture" class="form-control" @bind-Value="product.Picture"></InputFile>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="input-group col">
+                <label for="description">توضیحات</label>
+                <InputText id="description" class="form-control" @bind-Value="product.Description"></InputText>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">اضافه کردن</button>
+        <button class="btn btn-alert-dark" @onclick="BackTo">انصراف</button>
+    </EditForm>
+}
+
+
+@code {
+    private Product product;
+    private List<Category> category;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        product = new Product();
+        category = ViewCategoryUseCase.Execute().ToList();
+    }
+    private void AddProduct()
+    {
+        AddProductUseCase.Execute(this.product);
+        BackTo();
+    }
+    private void BackTo()
+    {
+        NVM.NavigateTo("/product/viewproducts");
+    }
+}

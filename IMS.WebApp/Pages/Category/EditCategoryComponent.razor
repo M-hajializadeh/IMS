@@ -1,0 +1,57 @@
+﻿@page "/category/editcategory/{Id}"
+@inject NavigationManager NVM
+@inject IEditCategoryUseCase EditCategoryUseCase
+@inject IGetCategoryByIdUseCase GetCategoryByIdUseCase
+
+<h3>ویرایش دسته بندی</h3>
+
+@if (Category != null)
+{
+    <EditForm Model="Category" OnValidSubmit="EditCategory">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <div class="row mb-2">
+            <div class="input-group col-6">
+                <label for="name">نام دسته بندی</label>
+                <InputText id="name" class="form-control" @bind-Value="Category.Name"></InputText>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="input-group col">
+                <label for="description">توضیحات</label>
+                <InputText id="description" class="form-control" @bind-Value="Category.Description"></InputText>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">ویرایش کردن</button>
+        <button class="btn btn-alert-dark" @onclick="BackTo">انصراف</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private Category Category=new Category();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+    }
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (int.TryParse(Id, out int result))
+            Category = GetCategoryByIdUseCase.Execute(result);
+    }
+    private void EditCategory()
+    {
+        EditCategoryUseCase.Execute(Category);
+        BackTo();
+    }
+
+    private void BackTo()
+    {
+        NVM.NavigateTo("/category/viewcategory");
+    }
+}

@@ -1,0 +1,62 @@
+﻿@page "/product/viewproducts"
+@inject NavigationManager NVM
+@inject IProductUseCase ProductUseCase
+@inject IGetCategoryByIdUseCase GetCategoryByIdUseCase 
+
+<h3>نمایش محصولات</h3>
+<button class="btn btn-primary" @onclick="AddProduct">افزودن محصول</button>
+@if (Products != null)
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>نام</th>
+                <th>نام دسته بندی</th>
+                <th>توضیحات</th>
+                <th>تعداد</th>
+                <th>تصویر محصول</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var Product in Products)
+        {
+            <tr>
+                <td>@Product.Name</td>
+                <td>@GetCategoryByIdUseCase.Execute(Product.CategoryId)?.Name</td>
+                <td>@Product.Description</td>
+                <td>@Product.Quntity</td>
+                <td>@Product.Picture</td>
+                <td>
+                    <button class="btn btn-link" @onclick="(()=>EditProduct(Product.Id))"  >ویرایش</button>
+                    <button class="btn btn-link" @onclick="(()=>DeleteProduct(Product.Id))" >حذف</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+}
+@code {
+    private List<Product> Products;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Products = ProductUseCase.Execute().ToList();
+    }
+    private void AddProduct()
+    {
+        NVM.NavigateTo("/product/addproduct");
+    }
+    private void EditProduct(int productId)
+    {
+        NVM.NavigateTo($"/products/editproduct/{productId}");
+    }
+    private void DeleteProduct(int productId)
+    {
+         NVM.NavigateTo($"/products/deleteproduct/{productId}");
+    }
+
+}

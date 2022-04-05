@@ -1,0 +1,17 @@
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.Plugin.DataStore.deps.json
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.Plugin.DataStore.dll
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\ref\IMS.Plugin.DataStore.dll
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.Plugin.DataStore.pdb
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.CoreBusiness.dll
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.UseCases.dll
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.UseCases.pdb
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.CoreBusiness.pdb
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.csproj.AssemblyReference.cache
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.AssemblyInfoInputs.cache
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.AssemblyInfo.cs
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.csproj.CoreCompileInputs.cache
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.csproj.CopyComplete
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.dll
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\ref\IMS.Plugin.DataStore.dll
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.pdb

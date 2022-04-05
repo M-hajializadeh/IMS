@@ -1,0 +1,72 @@
+﻿@inject IGetProductUseCase GetProductUseCase
+@inject ICheckOutProductUseCase CheckOutProductUseCase
+@if (product != null)
+{
+    if (!String.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="alert alert-danger">
+            @errorMessage
+        </div>
+    }
+     <br/>
+    <EditForm Model="product" OnValidSubmit="CheckOutProduct">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <div class="row">
+            <div class="input-group mb-2">
+                <label for="name">نام محصول</label>
+                <input id="name" readonly class="form-control" @bind="product.Name" />
+            </div>
+            <div class="input-group">
+                <label for="quntity">تعداد</label>
+                <InputNumber id="quntity" class="form-control" @bind-Value="product.Quntity"></InputNumber>
+            </div>
+        </div>
+            <br/>
+        <button class="btn btn-primary" type="submit">خروج از انبار</button>
+    </EditForm>
+   
+    
+
+}
+
+
+@code {
+    private Product product;
+    [Parameter]
+    public Product? SelectedProduct { get; set; }
+    [Parameter]
+    public EventCallback<Product> OnProductCheckOut { get; set; }
+    private string errorMessage;
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (SelectedProduct != null)
+        {
+            product = new Product
+                {
+                    Id = SelectedProduct.Id,
+                    Name = SelectedProduct.Name,
+                    CategoryId = SelectedProduct.CategoryId,
+                    Quntity = 1
+                };
+        }
+        else
+            product = null;
+    }
+    private void CheckOutProduct()
+    {
+        var productCheck = GetProductUseCase.Execute(product.Id);
+        if(product.Quntity<=0)
+            errorMessage = "تعداد تجهیزات درخواستی باید بیشتر از 0 باشد";
+        else if (productCheck.Quntity >= product.Quntity)
+        {
+            OnProductCheckOut.InvokeAsync(product);
+            errorMessage = string.Empty;
+            CheckOutProductUseCase.Execute(product.Id, product.Quntity);
+        }
+        else
+            errorMessage = "تعداد تجهیزات درخواستی در انبار موجود نمی باشد";
+
+    }
+}
