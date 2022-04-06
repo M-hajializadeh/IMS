@@ -2,6 +2,6 @@
 {
     public interface ICheckOutProductUseCase
     {
-        void Execute(int productId, int qtyToCkeckOut);
+        void Execute(string workerName,int productId, int qtyToCkeckOut);
     }
 }

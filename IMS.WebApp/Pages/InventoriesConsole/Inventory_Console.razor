@@ -1,24 +1,47 @@
 ﻿@page "/inventory_console"
-<h3>صفحه مدیریت انباردار</h3>
 <br />
+<div class="row">
+    <div class="col-7">
+        <h3>صفحه مدیریت انباردار</h3>
+    </div>
+    <div class="col-2"><label for="worker">نام صندوق دار:</label></div>
+    <div class="col-3">
+        <div class="form-group">
+            <input id="worker" class="form-control" @bind-value="workerName" />
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-4">
         <SelectedProductForCheckOut OnProductSelected="SelectProduct"></SelectedProductForCheckOut>
-        <CheckOutProductComponent SelectedProduct="selectedProduct" OnProductCheckOut="CheckOutProduct"></CheckOutProductComponent>
+        <CheckOutProductComponent WorkerName="@workerName" SelectedProduct="selectedProduct" OnProductCheckOut="CheckOutProduct"></CheckOutProductComponent>
     </div>
-    <div class="col-8"></div>
+    <div class="col-8">
+        <TodayTransactionsComponent @ref="transactionComponent"></TodayTransactionsComponent>
+    </div>
 
 </div>
 
 
 @code {
+    private TodayTransactionsComponent transactionComponent;
     private Product selectedProduct;
+    private string workerName;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        if(firstRender)
+        {
+            transactionComponent.LoadTransactions(workerName);
+        }
+    }
     private void SelectProduct(Product product)
     {
         selectedProduct = product;
     }
     private void CheckOutProduct(Product product)
     {
-        
+        transactionComponent.LoadTransactions(workerName);
     }
 }

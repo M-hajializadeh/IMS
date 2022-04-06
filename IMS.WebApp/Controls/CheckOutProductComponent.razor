@@ -34,6 +34,8 @@
 @code {
     private Product product;
     [Parameter]
+    public string WorkerName { get; set; }     
+    [Parameter]
     public Product? SelectedProduct { get; set; }
     [Parameter]
     public EventCallback<Product> OnProductCheckOut { get; set; }
@@ -48,7 +50,7 @@
                     Id = SelectedProduct.Id,
                     Name = SelectedProduct.Name,
                     CategoryId = SelectedProduct.CategoryId,
-                    Quntity = 1
+                    Quntity =0
                 };
         }
         else
@@ -56,6 +58,12 @@
     }
     private void CheckOutProduct()
     {
+        if (string.IsNullOrWhiteSpace(WorkerName))
+        {
+            errorMessage = "اطلاعات انباردار مشکل دارد";
+            return;
+        }
+        
         var productCheck = GetProductUseCase.Execute(product.Id);
         if(product.Quntity<=0)
             errorMessage = "تعداد تجهیزات درخواستی باید بیشتر از 0 باشد";
@@ -63,7 +71,7 @@
         {
             OnProductCheckOut.InvokeAsync(product);
             errorMessage = string.Empty;
-            CheckOutProductUseCase.Execute(product.Id, product.Quntity);
+            CheckOutProductUseCase.Execute(WorkerName,product.Id, product.Quntity);
         }
         else
             errorMessage = "تعداد تجهیزات درخواستی در انبار موجود نمی باشد";

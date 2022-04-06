@@ -1,0 +1,39 @@
+﻿@inject IGetTodayTransactionUseCase GetTodayTransactionUseCase
+@if(transactions!=null)
+{
+   <table class="table tabltable-striped">
+    <thead>
+        <tr>
+            <th>نام انباردار</th>
+            <th>نام محصول</th>
+            <th>تاریخ</th>
+            <th>تعداد قبل از خروج</th>
+            <th>تعداد آفیش</th>
+            <th>تعداد موجودی انبار</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tran in transactions)
+        {
+            <tr>
+                <td>@tran.WorkerName</td>
+                <td>@tran.ProductName</td>
+                <td>@tran.LeftInventoryTimeStamp.ToString("MM/dd HH:mm")</td>
+                <td>@tran.BeforeQty</td>
+                <td>@tran.CheckOutQty</td>
+                <td>@(tran.BeforeQty-tran.CheckOutQty)</td>
+            </tr>
+        }
+    </tbody>
+</table> 
+}
+
+
+@code {
+    private IEnumerable<Transaction> transactions;
+    public void LoadTransactions( string workerName)
+    {
+        transactions = GetTodayTransactionUseCase.Execute(workerName);
+        StateHasChanged();
+    }
+}
