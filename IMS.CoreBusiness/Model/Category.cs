@@ -18,6 +18,6 @@ namespace IMS.CoreBusiness.Model
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Description { get; set; }= String.Empty;
 
-
+        public List<Product> Products { get; set; }
     }
 }

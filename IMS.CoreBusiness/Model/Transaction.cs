@@ -24,6 +24,6 @@ namespace IMS.CoreBusiness.Model
         [Display(Name = "زمان خروج")]
         public DateTime LeftInventoryTimeStamp { get; set; }
         [Display(Name = "نام تحویل گیرنده")]
-        public string RecivedProductEmployee { get; set; }
+        public string RecivedProductEmployee { get; set; } = "Employee Name";
     }
 }

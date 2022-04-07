@@ -20,9 +20,9 @@ namespace IMS.CoreBusiness.Model
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public int Quntity { get; set; }
         [Display(Name = "تصویر")]
-        public string Picture { get; set; }
+        public string? Picture { get; set; }
         public int CategoryId { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public Category category { get; set; }
 
     }
 }
