@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager NVM
+
+<AuthorizeView>
+    <Authorized>
+        <a href="Identity/Account/Manage">سلام کاربر, @context.User.Identity.Name!</a>
+        <form action="/Account/Logout?returnUrl=%2f" method="post">
+            <button type="submit" class="nav-link btn btn-link">خروج</button>
+        </form>
+    </Authorized>
+    <NotAuthorized>
+        <a href="/Account/Register">ثبت نام</a>
+        <a href="/Account/Login">ورود</a>
+    </NotAuthorized>
+</AuthorizeView>

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.Plugin.DataStore", "IMS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.UseCases", "IMS.UseCases\IMS.UseCases.csproj", "{DE926E1D-517C-4715-AABB-69283649BC20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMS.Plugin.SQLDataStore", "IMS.Plugin.SQLDataStore\IMS.Plugin.SQLDataStore.csproj", "{DDF2A98B-FEBB-4503-90CB-36E7FA062283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMS.Plugin.SQLDataStore", "IMS.Plugin.SQLDataStore\IMS.Plugin.SQLDataStore.csproj", "{DDF2A98B-FEBB-4503-90CB-36E7FA062283}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
 ﻿@page "/products/deleteproduct/{Id}"
+@attribute [Authorize(Policy ="AdminOnly")]
 @inject IGetProductUseCase GetProductUseCase
 @inject IDeleteProductUseCase DeleteProductUseCase
 @inject NavigationManager NVM

@@ -1,4 +1,5 @@
 ﻿@page "/category/deletecategory/{Id}"
+@attribute [Authorize(Policy ="AdminOnly")]
 @inject NavigationManager NVM
 @inject IGetCategoryByIdUseCase  GetCategoryByIdUseCase 
 @inject IDeleteCategoryUseCase DeleteCategoryUseCase

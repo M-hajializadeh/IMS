@@ -1,5 +1,6 @@
 ﻿using IMS.CoreBusiness.Model;
 using IMS.UseCases.DataStorePluginInterfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace IMS.Plugin.SQLDataStore.Repositories
             if (string.IsNullOrWhiteSpace(workerName))
                 return dbContext.Transactions;
             else
-                return dbContext.Transactions.Where(t => string.Equals(t.WorkerName.ToLower(), workerName.ToLower()));
+                return dbContext.Transactions.Where(t => EF.Functions.Like(t.WorkerName, $"%{workerName}%"));
         }
 
         public IEnumerable<Transaction> GetByDate(string workerName, DateTime date)
@@ -29,7 +30,8 @@ namespace IMS.Plugin.SQLDataStore.Repositories
             if (string.IsNullOrWhiteSpace(workerName))
                 return dbContext.Transactions.Where(t => t.LeftInventoryTimeStamp.Date == date.Date);
             else
-                return dbContext.Transactions.Where(t => string.Equals(t.WorkerName.ToLower(), workerName.ToLower()) &&
+                return dbContext.Transactions.Where(t =>
+               EF.Functions.Like(t.WorkerName, $"%{workerName}%") &&
                 t.LeftInventoryTimeStamp.Date == date.Date);
         }
 
@@ -46,7 +48,8 @@ namespace IMS.Plugin.SQLDataStore.Repositories
                 return dbContext.Transactions.Where(t => t.LeftInventoryTimeStamp >= startDate.Date && 
                                                          t.LeftInventoryTimeStamp <= endDate.Date.AddDays(1).Date);
             else
-                return dbContext.Transactions.Where(t => string.Equals(t.WorkerName.ToLower(), workerName.ToLower()) &&
+                return dbContext.Transactions.Where(t => 
+                                                EF.Functions.Like(t.WorkerName, $"%{workerName}%") &&
                                                  t.LeftInventoryTimeStamp >= startDate.Date &&
                                                  t.LeftInventoryTimeStamp <= endDate.Date.AddDays(1).Date
                                               );

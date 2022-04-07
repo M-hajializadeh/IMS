@@ -1,4 +1,5 @@
 ﻿@page "/products/editproduct/{Id}"
+@attribute [Authorize(Policy ="AdminOnly")]
 @inject IEditProductUseCase EditProductUseCase
 @inject IGetProductUseCase GetProductUseCase
 @inject IViewCategoryUseCase ViewCategoryUseCase

@@ -10,9 +10,15 @@ using IMS.WebApp.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("AccountDbContextConnection");
+builder.Services.AddDbContext<AccountDbContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<AccountDbContext>();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -24,6 +30,12 @@ IConfigurationRoot Configuration = new ConfigurationBuilder()
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(Configuration.GetConnectionString("DefualtConnection"));   
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", p => p.RequireClaim("Position", "Admin"));
+    options.AddPolicy("WorkerOnly", p => p.RequireClaim("Position", "Worker"));
 });
 
 //DI for Storage in memory
@@ -65,6 +77,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

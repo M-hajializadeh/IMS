@@ -1,4 +1,5 @@
 ﻿@page "/category/viewcategory"
+@attribute [Authorize(Policy ="AdminOnly")]
 @inject IViewCategoryUseCase ViewCategoryUseCase
 @inject NavigationManager NVM 
 

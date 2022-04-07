@@ -1,4 +1,5 @@
 ﻿@page "/transaction"
+@attribute [Authorize(Policy ="AdminOnly")]
 @inject IJSRuntime JSRuntime
 @inject IGetTransactionsUseCase GetTransactionsUseCase
 <div class="row">
@@ -21,10 +22,10 @@
         </div>
     </div>
     <div class="col-1">
-        <button type="button" class="btn btn-primary" @onclick="LoadTransaction">جستجو</button>
+        <button type="button" class="btn btn-primary" style="margin-top: 24px;" @onclick="LoadTransaction">جستجو</button>
     </div>
     <div class="col-1">
-        <button type="button" class="btn btn-primary" @onclick="PrintReport">پرینت</button>
+        <button type="button" class="btn btn-primary" style="margin-top: 24px;" @onclick="PrintReport">پرینت</button>
     </div>
 </div>
 
