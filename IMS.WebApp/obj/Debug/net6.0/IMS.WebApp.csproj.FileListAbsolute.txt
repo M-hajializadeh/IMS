@@ -13,7 +13,6 @@ C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.WebApp.exe
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.WebApp.deps.json
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.WebApp.runtimeconfig.json
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.WebApp.dll
-C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\ref\IMS.WebApp.dll
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.WebApp.pdb
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.CoreBusiness.dll
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\bin\Debug\net6.0\IMS.Plugin.DataStore.dll
@@ -32,3 +31,4 @@ C:\.NetCore Courses\Project\IMS\IMS.WebApp\obj\Debug\net6.0\IMS.WebApp.dll
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\obj\Debug\net6.0\ref\IMS.WebApp.dll
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\obj\Debug\net6.0\IMS.WebApp.pdb
 C:\.NetCore Courses\Project\IMS\IMS.WebApp\obj\Debug\net6.0\IMS.WebApp.genruntimeconfig.cache
+C:\.NetCore Courses\Project\IMS\IMS.WebApp\obj\Debug\net6.0\refint\IMS.WebApp.dll

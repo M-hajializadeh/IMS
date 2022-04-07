@@ -12,5 +12,6 @@ namespace IMS.UseCases.DataStorePluginInterfaces
         IEnumerable<Transaction> Get(string workerName);
         IEnumerable<Transaction> GetByDate(string workerName, DateTime date);
         void Save(Transaction transaction);
+        IEnumerable<Transaction> Search(string workerName, DateTime startDate, DateTime endDate);
     }
 }

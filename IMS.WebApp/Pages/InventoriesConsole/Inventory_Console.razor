@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-4">
         <SelectedProductForCheckOut OnProductSelected="SelectProduct"></SelectedProductForCheckOut>
-        <CheckOutProductComponent WorkerName="@workerName" SelectedProduct="selectedProduct" OnProductCheckOut="CheckOutProduct"></CheckOutProductComponent>
+        <CheckOutProductComponent  WorkerName="@workerName" SelectedProduct="selectedProduct" OnProductCheckOut="CheckOutProduct"></CheckOutProductComponent>
     </div>
     <div class="col-8">
         <TodayTransactionsComponent @ref="transactionComponent"></TodayTransactionsComponent>
@@ -27,6 +27,7 @@
     private TodayTransactionsComponent transactionComponent;
     private Product selectedProduct;
     private string workerName;
+   // private string RecivedProductEmployee;
 
     protected override void OnAfterRender(bool firstRender)
     {

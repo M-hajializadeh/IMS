@@ -1,0 +1,76 @@
+﻿@page "/transaction"
+@inject IGetTransactionsUseCase GetTransactionsUseCase
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            <label for="workerName">نام انباردار</label>
+            <input type="text" id="workerName" class="form-control" @bind-value="workerName" />
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <label for="startDate">تاریخ شروع</label>
+            <input type="datetime" id="startDate" class="form-control" @bind-value="startDate" />
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <label for="endDate">تاریخ پایان</label>
+            <input type="datetime" id="endDate" class="form-control" @bind-value="endDate" />
+        </div>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-primary" @onclick="LoadTransaction" >جستجو</button>
+    </div>
+    <div class="col">
+         <button type="button" class="btn btn-primary" >پرینت</button>
+    </div>
+</div>
+
+@if(transactions!=null)
+{
+   <table class="table tabltable-striped">
+    <thead>
+        <tr>
+            <th>نام انباردار</th>
+            <th>نام محصول</th>
+            <th>تاریخ</th>
+            <th>تعداد قبل از خروج</th>
+            <th>تعداد آفیش</th>
+            <th>تعداد موجودی انبار</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tran in transactions)
+        {
+            <tr>
+                <td>@tran.WorkerName</td>
+                <td>@tran.ProductName</td>
+                <td>@tran.LeftInventoryTimeStamp.ToString("yyyy/MM/dd HH:mm")</td>
+                <td>@tran.BeforeQty</td>
+                <td>@tran.CheckOutQty</td>
+                <td>@(tran.BeforeQty-tran.CheckOutQty)</td>
+            </tr>
+        }
+    </tbody>
+</table> 
+}
+@code {
+    private string workerName;
+    private DateTime startDate;
+    private DateTime endDate;
+
+    private IEnumerable<Transaction> transactions;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        startDate = DateTime.Today;
+        endDate = DateTime.Today;
+        transactions = GetTransactionsUseCase.Execute(workerName, startDate, endDate);
+    }
+    private void LoadTransaction()
+    {
+        transactions = GetTransactionsUseCase.Execute(workerName, startDate, endDate);
+    }
+}

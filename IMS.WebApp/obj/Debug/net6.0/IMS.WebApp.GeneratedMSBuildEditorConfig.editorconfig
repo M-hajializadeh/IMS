@@ -55,6 +55,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3JpZXNDb25zb2xlXEludmVudG9yeV9Db25zb2xlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/.NetCore Courses/Project/IMS/IMS.WebApp/Pages/InventoriesConsole/TransactionReportsComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50b3JpZXNDb25zb2xlXFRyYW5zYWN0aW9uUmVwb3J0c0NvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/.NetCore Courses/Project/IMS/IMS.WebApp/Pages/ProductPages/AddProductComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdFBhZ2VzXEFkZFByb2R1Y3RDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

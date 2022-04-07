@@ -35,13 +35,22 @@ namespace IMS.Plugin.DataStore
 
         public void Save(Transaction transaction)
         {
+            if (transaction == null) return;
             var maxId = 0;
             if(transactions != null && transactions.Count>0)
                 maxId=transactions.Max(t=>t.TransactionId);
-            if (transaction == null) return;
             transaction.TransactionId = ++maxId;
             transactions.Add(transaction);
 
+        }
+
+        public IEnumerable<Transaction> Search(string workerName, DateTime startDate, DateTime endDate)
+        {
+            if (string.IsNullOrWhiteSpace(workerName))
+                return transactions.Where(t => t.LeftInventoryTimeStamp>= startDate.Date && t.LeftInventoryTimeStamp<= endDate.Date.AddDays(1).Date);
+            else
+                return transactions.Where(t => string.Equals(t.WorkerName, workerName, StringComparison.OrdinalIgnoreCase)
+                && t.LeftInventoryTimeStamp >= startDate.Date && t.LeftInventoryTimeStamp <= endDate.Date.AddDays(1).Date);
         }
     }
 }

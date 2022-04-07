@@ -21,6 +21,10 @@
                 <label for="quntity">تعداد</label>
                 <InputNumber id="quntity" class="form-control" @bind-Value="product.Quntity"></InputNumber>
             </div>
+             @*<div class="input-group">
+                <label for="employee">تحویل گیرنده</label>
+                <InputNumber id="employee" class="form-control" @bind-Value="RecivedProductEmployee"></InputNumber>
+            </div>*@
         </div>
             <br/>
         <button class="btn btn-primary" type="submit">خروج از انبار</button>
@@ -33,6 +37,8 @@
 
 @code {
     private Product product;
+    //[Parameter]
+    //public string RecivedProductEmployee { get; set; }
     [Parameter]
     public string WorkerName { get; set; }     
     [Parameter]

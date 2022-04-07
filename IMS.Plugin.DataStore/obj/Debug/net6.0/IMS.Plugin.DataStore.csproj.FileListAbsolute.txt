@@ -1,6 +1,5 @@
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.Plugin.DataStore.deps.json
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.Plugin.DataStore.dll
-C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\ref\IMS.Plugin.DataStore.dll
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.Plugin.DataStore.pdb
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.CoreBusiness.dll
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\bin\Debug\net6.0\IMS.UseCases.dll
@@ -15,3 +14,4 @@ C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.dll
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\ref\IMS.Plugin.DataStore.dll
 C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\IMS.Plugin.DataStore.pdb
+C:\.NetCore Courses\Project\IMS\IMS.Plugin.DataStore\obj\Debug\net6.0\refint\IMS.Plugin.DataStore.dll

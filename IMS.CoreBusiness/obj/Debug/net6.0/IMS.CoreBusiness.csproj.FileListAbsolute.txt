@@ -1,6 +1,5 @@
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\bin\Debug\net6.0\IMS.CoreBusiness.deps.json
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\bin\Debug\net6.0\IMS.CoreBusiness.dll
-C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\bin\Debug\net6.0\ref\IMS.CoreBusiness.dll
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\bin\Debug\net6.0\IMS.CoreBusiness.pdb
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\IMS.CoreBusiness.GeneratedMSBuildEditorConfig.editorconfig
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\IMS.CoreBusiness.AssemblyInfoInputs.cache
@@ -10,3 +9,4 @@ C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\IMS.CoreBusine
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\ref\IMS.CoreBusiness.dll
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\IMS.CoreBusiness.pdb
 C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\IMS.CoreBusiness.csproj.AssemblyReference.cache
+C:\.NetCore Courses\Project\IMS\IMS.CoreBusiness\obj\Debug\net6.0\refint\IMS.CoreBusiness.dll
