@@ -64,6 +64,7 @@ namespace IMS.WebApp.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            [Display(Name ="ایمیل")]
             [Required]
             [EmailAddress]
             public string Email { get; set; }
@@ -72,6 +73,8 @@ namespace IMS.WebApp.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            /// 
+            [Display(Name = "کلمه عبور")]
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }
@@ -80,7 +83,7 @@ namespace IMS.WebApp.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Display(Name = "Remember me?")]
+            [Display(Name = "مرا بخاطر بسپار")]
             public bool RememberMe { get; set; }
         }
 
